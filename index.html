@@ -16,24 +16,27 @@
 
   <body>
     <div class="container">
-      <header class="site-header">
-        <div class="logo">
+      <header class="site-header" id="site-header">
+        <div class="logo" id="logo">
           <img
             class="nyt-logo"
             src="./assets/images/nyt-logo.svg"
             alt="NewYork Times Logo"
           />
         </div>
-
+        
         <form action="#" method="post">
           <p class="choose-a-section">Choose a section:</p>
-          <select name="sections" id="sections">
+          <select class="sections" id="sections">
             <option value>Sections ...</option>
             <option value="home">Home</option>
-            <option value="arts">Arts</option>
+            <option value="politics">Politics</option>
             <option value="business">Business</option>
-            <option value="sports">Sports</option>
+            <option value="science">Science</option>
+            <option value="health">Health</option>
+            <option value="arts">Arts</option>
             <option value="technology">Technology</option>
+            <option value="sports">Sports</option>
             <option value="fashion">Fashion</option>
           </select>
         </form>

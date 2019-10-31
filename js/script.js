@@ -1,8 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
   $("#sections").on("change", function() {
     event.preventDefault();
+    
     $("#logo").addClass("small-logo");
-    // $("#site-header").addClass("small-header");
+    $("#loader").removeClass("hide");
+    $("#loader").addClass("show");
 
     $.ajax({
       method: "GET",
@@ -21,8 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
         $.each(filterResults, function(key, data) {
           $(".stories").append(
-            `<article class='article-block' style="background-image: url('${data.multimedia[4].url}')">
-            <div class='article-text'><p>${data.abstract}</p></div></article>`
+            `<article class='article-block' style="background-image: url('${
+              data.multimedia[4].url
+            }')">
+              <a href="${data.short_url}">
+                <ul class='article-text'>
+                  <li class='article-title'>${data.title}</li>
+                  <li class='article-detail'>${data.abstract}</li>
+                  <li class='article-date'>${data.updated_date.slice(0,10)}</li>
+                </ul>
+              </a>
+            </article>`
           );
         });
       })
@@ -30,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
       .fail(function() {
         $(".stories").append("Human civilization has come to an end. Goodbye.");
       })
-      .always(function() {});
+      .always(function() {
+        $("#loader").removeClass("show");
+        $("#loader").addClass("hide");
+      });
   });
 });

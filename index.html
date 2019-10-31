@@ -17,13 +17,13 @@
   <body>
     <div class="container">
       <header class="site-header" id="site-header">
-        <div class="logo" id="logo">
+        <h1 class="logo" id="logo">
           <img
             class="nyt-logo"
             src="./assets/images/nyt-logo.svg"
             alt="NewYork Times Logo"
           />
-        </div>
+        </h1>
         
         <form action="#" method="post">
           <p class="choose-a-section">Choose a section:</p>
@@ -41,10 +41,15 @@
           </select>
         </form>
       </header>
-
-      <section class="stories">
-        <!-- <img class="loader" src="./assets/images/ajax-loader.gif" alt="Loading..." /> -->
-      </section>
+      <div>
+        <img
+          id="loader"
+          class="hide"
+          src="./assets/images/ajax-loader.gif"
+          alt="Loading..."
+        />
+      </div>
+      <section class="stories"></section>
       <footer class="footer">
         <p>© Copyright 2019 INSTANEWS</p>
       </footer>

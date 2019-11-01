@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+  
+  $(function() {
+    $('#sections').selectric();
+  })
+  
   $("#sections").on("change", function() {
     event.preventDefault();
     
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
 
       .fail(function() {
-        $(".stories").append("Human civilization has come to an end. Goodbye.");
+        $(".stories").append("An error has occured.");
       })
       .always(function() {
         $("#loader").removeClass("show");

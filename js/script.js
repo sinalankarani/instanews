@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $.ajax({
       method: "GET",
-      url: `http://api.nytimes.com/svc/topstories/v2/${this.value}.json?api-key=PeYd6hAa0VOUHAOoc76PvocokqAM86gd&`,
+      url: `https://api.nytimes.com/svc/topstories/v2/${this.value}.json?api-key=PeYd6hAa0VOUHAOoc76PvocokqAM86gd&`,
       dataType: "json"
     })
 
